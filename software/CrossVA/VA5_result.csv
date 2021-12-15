@@ -1,0 +1,17 @@
+"ID","MALPREV","HIVPREV","PREGSTAT","PREGLIK","CAUSE1","LIK1","CAUSE2","LIK2","CAUSE3","LIK3","INDET","COMCAT","COMNUM"
+uuid:00000000-0000-0000-0000-00000000032a,l,l,n/a, ,Assault,100, , , , ,0,Emergency,90
+uuid:00000000-0000-0000-0000-00000000032b,l,l,n/a, ,Assault,99, , , , ,1,Inevitable,100
+uuid:00000000-0000-0000-0000-0000000002c4,l,l,indeterminate, , , , , , , ,100,Emergency,100
+uuid:d188aa3f-b851-4825-8ec9-2aff7ceb2005,l,l,n/a, ,Diarrhoeal diseases,98, , , , ,2,Culture,99
+uuid:b07d59f8-e4dd-45e9-82f6-7ff4f67985b2,l,l,n/a, ,Diabetes mellitus,60,Pulmonary tuberculosis,37, , ,3,Culture,99
+uuid:c180caec-9db4-41ad-bc38-44c953c5ec01,l,l,n/a, ,Pulmonary tuberculosis,100, , , , ,0,Health systems,98
+uuid:396145d7-fa38-4590-b7cc-0f78e39c2fa0,l,l,n/a, ,Other and unspecified cardiac dis,100, , , , ,0,Culture,60
+uuid:50e8865c-af93-43fa-ac64-d68917bd7225,l,l,Pregnancy ended within 6 weeks of death,c(`Pregnancy ended within 6 weeks of death` = 100),Obstetric haemorrhage,100, , , , ,0,Emergency,100
+uuid:14ed6222-4ea7-45d8-a77a-260cec06fa5e,l,l,Not pregnant or recently delivered,c(`Not pregnant or recently delivered` = 100),Diarrhoeal diseases,89, , , , ,11,Multiple, 
+uuid:5c17d6b1-b374-43c6-ad88-b94bb2a7eb8d,l,l,Not pregnant or recently delivered,c(`Not pregnant or recently delivered` = 100),HIV/AIDS related death,100, , , , ,0,Multiple, 
+uuid:08c14983-a487-4a82-a8c2-393c54ff00b1,l,l,n/a, ,HIV/AIDS related death,100, , , , ,0,Multiple, 
+uuid:278543fc-f5e7-4e18-8e22-e007450a2840,l,l,n/a, ,Diarrhoeal diseases,100, , , , ,0,Knowledge,100
+uuid:ef2b913e-7523-4559-a388-aa3f8f5a679f,l,l,n/a, ,Diarrhoeal diseases,100, , , , ,0,Knowledge,99
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b,l,l,n/a, ,Diarrhoeal diseases,100, , , , ,0,Knowledge,100
+uuid:4df55ba9-5951-4113-bc5b-65212bf43bdf,l,l,Not pregnant or recently delivered,c(`Not pregnant or recently delivered` = 100),Malaria,68, , , , ,32,Knowledge,99
+uuid:7b42f721-ef00-4e2c-8ed2-da752b04abb6,l,l,n/a, ,Acute resp infect incl pneumonia,90, , , , ,10,Culture,91

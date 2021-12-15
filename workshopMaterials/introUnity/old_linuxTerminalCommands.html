@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<title>IPR Ohio State: Jason Thomas Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../css/w3.css">
+<link rel="stylesheet" href="../../css/w3-theme-black.css">
+<link rel="stylesheet" href="../../css/family=Roboto">
+<link rel="stylesheet" href="../../css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <!-- <a href="#" class="w3-bar-item w3-button w3-theme-l1">Logo</a> -->
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+    <a href="howTo/howTo.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">How To...</a>
+    <a href="workshopMaterials/wsmaterials.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Workshop Materials</a>
+    <a href="Research/research.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Research</a>
+    <a href="Software/software.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Software</a>
+    <a href="usefulLinks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Useful LInks</a>
+    <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Clients</a> -->
+    <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Partners</a> -->
+  </div>
+</div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<!-- <div class="w3-main" style="margin-left:250px"> -->
+<div class="w3-main">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Common Linux / Unix Terminal Commands</h1>
+      <p></p>
+    </div>
+    <!-- <div class="w3-third w3-container"> -->
+    <!--   <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p> -->
+    <!--   <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+    <!-- </div> -->
+  </div>
+
+Links: Commands; Advanced Commands; .bashrc; programs
+
+Working on a linux server (e.g., the Unity cluster) typically involves interacting with a terminal. A terminal will look something like this
+
+<br><br>
+<p style="text-align: center;">
+<img src="../../howTo/unityCluster/puttyConnected.png" alt="" width="661" height="418">
+</p>
+<br><br>
+
+The dollar sign "$" just before the green cursor (in the screenshot above) is called the <strong>PROMPT</strong> and it lets me know that Unity is ready for me to start typing commands. The output from those commands will appear on a new line WITHOUT a "$".
+
+The terminal may seem quite unfriendly at first, but mastery of only a few commands will get you off running. These commands are
+<ul>
+  <li><a href="#pwd"><code>pwd</code></a> -- print the path/location of the folder that you are currently in</li>
+  <li><a href="ls"><code>ls</code></a> -- print the contents of the current folder</li>
+  <li><a href="mkdir"><code>mkdir</code> <em>NAME</em></a> -- make a new folder called <em>NAME</em> in the current location</li>
+  <li><a href="cd"><code>cd</code> <em>PATH</em></a> -- change to the new location specified by <em>PATH</em></li>
+  <li><a href="rm"><code>rm</code> <em>FileName</em></a> -- remove the file <em>FileName</em></li>
+  <li><a href="mv"><code>mv</code> <em>FileName</em> <em>NewPath</em></a> -- move the file <em>FileName</em> to the location specified by <em>NewPath</em></li>
+  <li><a href="exit"><code>exit</code></a> -- closes the terminal (exits the shell)</li>
+</ul>
+<h1><strong> A Little Background </strong></h1>
+Before we take a closer look at these commands, it will be useful to discuss the linux file system, along with <strong>ABSOLUTE</strong> and <strong>RELATIVE PATHS</strong>. The Unity cluster will serve as the working example.
+
+Each folder and file can be found by referring to its <strong>ABSOLUTE PATH</strong>, the list of its "parent" folders separated by a forward slash
+"/".
+<ul>
+  <li>The oldest "ancestor", or the "root" of the family tree, is simply a single forward slash all by itself: "/" (i.e., no "parent" folders).</li>
+  <li>Your personal folder (or directory) on the Unity cluster is in the "home" folder which, in turn, is in the root folder: "/home/name.#".</li>
+  <li>A concrete example: the ABSOLUTE PATH to my personal folder is "/home/thomas.3912" (<em> quick point: on the Unity Cluster, each user gets 100 Gigbytes of space in their home folder</em>).</li>
+</ul>
+You can also refer to files/folders using the <strong>RELATIVE PATH</strong>, or the location from you current directory (as shown by the <code>pwd</code> command.
+<ul>
+  <li>If I am currently in my home directory, and I want to list the files in my good friend Darth Vader's home folder, then I could use the relative path as follows
+<pre> 
+  $ pwd
+   
+  /home/thomas.3912
+   
+  $ ls ../vader.0001/
+   
+  Death_Star_Plans.txt  DataFiles Cookie_Recipes CV.docx nihProposal.latex
+  family_Structure_Effects_on_Using_the_Force.do
+</pre>
+(useful terminals will print folders and files in different colors)</li>
+  <li>A shortcut path to your home directory is tilde followed by a forward slash "~/". Thus, the following terminal commands will produce the same output:
+<pre>$ ls /home/thomas.3912</pre>
+<pre>$ ls ~/</pre>
+</li>
+</ul>
+
+[code lang="js"]your code here[/code]
+[bash]$ ls [/bash]
+
+
+<strong> Further Details about Terminal Commands </strong>
+<a name="pwd"></a>
+<h2><strong>pwd </strong></h2>
+<a name="ls"></a>
+<h2><strong>ls </strong></h2>
+<a name="mkdir"></a>
+<h2><strong>mkdir </strong></h2>
+<a name="cd"></a>
+<h2><strong>cd </strong></h2>
+<a name="rm"></a>
+<h2><strong>rm </strong></h2>
+with great power comes responsibility
+the directory version is <code>rmdir</code>
+
+<a name="mv"></a>
+<h2><strong>mv </strong></h2>
+<a name="exit"></a>
+<h2><strong>exit</strong></h2>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

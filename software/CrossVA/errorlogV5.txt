@@ -1,0 +1,238 @@
+Error & warning log built for InterVA5 2018-12-10 16:22:40 
+
+
+the following records are incomplete and excluded from further processing:
+
+
+
+ the following data discrepancies were identified and handled: 
+
+uuid:00000000-0000-0000-0000-00000000032a   W610079-o (inj rta) value inconsistent with W610090-o (inj viol) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610085-o (inj drown) value inconsistent with W610089-o (inj burn) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610089-o (inj burn) value inconsistent with W610091-o (inj gun) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610104-o (ever cry) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610105-o (cry little)  not flagged in category W610104-o (ever cry) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610105-o (cry little) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610109-o (ever move) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610111-o (brth little) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610114-o (born dead) value inconsistent with W610104-o (ever cry) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610139-o (dia demt) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610148-a (fev <1w)  not flagged in category W610147-o (fever) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610154-a (cou <3w)  not flagged in category W610153-o (cough) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610161-a (dif br 3d)  not flagged in category W610159-o (dif br) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610167-a (br fs <2w)  not flagged in category W610166-o (br fast) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610169-a (brl <2w)  not flagged in category W610168-o (brless) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610170-o (brl unab) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610176-a (chp 3d)  not flagged in category W610174-o (ch pain) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610182-a (drr <2w)  not flagged in category W610181-o (diarr) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610192-o (vom blck) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610199-a (abd p up)  not flagged in category W610194-o (abd pain) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610212-o (ment conf) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610213-o (menc 3+m) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610216-a (unc 6+h)  not flagged in category W610215-o (unc 24+h) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610231-o (sk ul pus)  not flagged in category W610227-o (skin) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610248-a (sw p f 1+w)  not flagged in category W610247-o (sw pu face) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610256-o (lm arm)  not flagged in category W610253-o (lumps) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610271-o (suckle) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610274-a (suck st d1+) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610275-o (conv d0) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610285-a (cold 3+d) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610290-o (sudd d) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610300-o (men mp bl) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610303-a (men l 4+w) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610309-o (d <6m pr) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610313-o (d aft del) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610319-b (4+ pr) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610322-o (pr disch) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610323-o (pr conv) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610329-o (pr bl ppt) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610338-o (del prof) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610344-o (del cs) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610347-o (del >1m ea) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610356-o (moth aliv) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610357-o (moth d del) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610358-a (moth d y1) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610360-a (born fac) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610360-c (born on way) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610361-o (born prof) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610367-a (gest 9m) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610367-c (gest 7m) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610371-o (abn back)  not flagged in category W610370-o (abnorm) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610376-o (bab mov) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610383-o (born 24+h w) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610387-o (born n del) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610391-o (moth vacc) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610394-b (born 4+ pr) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610396-o (moth hypt) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610397-o (moth diab) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610401-o (moth anaem) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610406-o (born blue) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610411-o (alco) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610412-o (tobac) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610420-o (tr drip)  not flagged in category W610418-o (treat) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610451-o (q trans)  not flagged in category W610450-o (q trav) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610082-o (inj nrta) value inconsistent with W610086-o (inj venom) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610086-o (inj venom) value inconsistent with W610087-o (inj anim) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610087-o (inj anim)  not flagged in category W610077-o (injury) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610094-o (inj blfor)  not flagged in category W610090-o (inj viol) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610109-o (ever move) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610138-o (dia copd) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610148-a (fev <1w)  not flagged in category W610147-o (fever) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610154-a (cou <3w)  not flagged in category W610153-o (cough) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610161-a (dif br 3d)  not flagged in category W610159-o (dif br) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610167-a (br fs <2w)  not flagged in category W610166-o (br fast) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610169-a (brl <2w)  not flagged in category W610168-o (brless) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610176-a (chp 3d)  not flagged in category W610174-o (ch pain) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610182-a (drr <2w)  not flagged in category W610181-o (diarr) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610203-a (abd pr rap)  not flagged in category W610200-o (abd prot) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610213-o (menc 3+m) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610216-a (unc 6+h)  not flagged in category W610215-o (unc 24+h) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610224-o (uri none)  not flagged in category W610223-o (urine) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610234-a (sk ra <1w)  not flagged in category W610233-o (sk rash) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610242-o (bld orif)  not flagged in category W610241-o (bleed) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610251-o (sw lf bth)  not flagged in category W610249-o (sw lg ft) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610254-o (lm mou)  not flagged in category W610253-o (lumps) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610263-a (swa sol)  not flagged in category W610261-o (swallow) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610274-a (suck st d1+) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610277-o (stiff) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610282-o (unc d0) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610283-o (unc d1+) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610285-a (cold 3+d) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610286-o (lethargy) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610289-o (yellow) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610290-o (sudd d) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610296-o (menstr) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610297-o (men betw) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610299-o (men mpse) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610300-o (men mp bl) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610303-a (men l 4+w) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610306-o (d <6w pend) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610312-o (d lab) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610316-o (live baby) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610322-o (pr disch) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610323-o (pr conv) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610325-o (pr bleed) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610330-o (plnta del) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610334-o (abort) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610336-o (d after ab) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610337-a (del hfac) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610337-c (del else) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610342-o (del norm) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610343-o (del assist) value inconsistent with W610019-a (male) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610355-a (mult fir) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610357-o (moth d del) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610358-a (moth d y1) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610367-a (gest 9m) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610367-c (gest 7m) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610373-o (abn sm hd)  not flagged in category W610370-o (abnorm) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610394-b (born 4+ pr) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610401-o (moth anaem) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610403-o (breech) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610405-o (cord first) only required for neonates - cleared in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610423-o (tr inj ab)  not flagged in category W610418-o (treat) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610059-o (married) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610085-o (inj drown) value inconsistent with W610093-o (inj strng) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610087-o (inj anim)  not flagged in category W610077-o (injury) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610092-o (inj stab)  not flagged in category W610090-o (inj viol) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610105-o (cry little)  not flagged in category W610104-o (ever cry) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610109-o (ever move) value inconsistent with W610022-k (d wk2-4) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610110-o (ever breathe) value inconsistent with W610022-k (d wk2-4) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610112-o (brth prob)  not flagged in category W610110-o (ever breathe) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610116-o (macerated) value inconsistent with W610022-k (d wk2-4) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610120-b (ill 3+w) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610128-o (dia mal+) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610129-o (dia mal-) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610137-o (dia canc) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610139-o (dia demt) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610143-o (dia kidn) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610144-o (dia liver) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610148-a (fev <1w)  not flagged in category W610147-o (fever) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610150-a (fev sev) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610156-o (cou sev) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610161-a (dif br 3d)  not flagged in category W610159-o (dif br) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610167-a (br fs <2w)  not flagged in category W610166-o (br fast) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610169-a (brl <2w)  not flagged in category W610168-o (brless) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610176-a (chp 3d) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610182-a (drr <2w)  not flagged in category W610181-o (diarr) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610183-a (4+ stls) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610199-a (abd p up) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610199-b (abd p lo) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610200-o (abd prot) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610201-b (abd pr 2+w) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610213-o (menc 3+m) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610215-o (unc 24+h)  not flagged in category W610214-o (uncons) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610218-o (unc to d) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610221-a (conv <10m) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610224-o (uri none) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610234-a (sk ra <1w) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610239-o (sk black)  not flagged in category W610233-o (sk rash) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610244-o (wt waste) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610245-o (wht rash) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610250-a (sw lf 3+d) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610257-o (lm grn) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610259-o (par 1 side) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610261-o (swallow) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610263-b (swa liq) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610264-o (swa pain) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610268-o (pale) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610274-a (suck st d1+)  not flagged in category W610273-o (suck st) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610283-o (unc d1+)  not flagged in category W610281-o (unresp) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610285-a (cold 3+d)  not flagged in category W610284-o (cold) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610297-o (men betw) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610300-o (men mp bl) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610303-a (men l 4+w) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610309-o (d <6m pr) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610315-o (d <6w chb) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610318-o (br feed) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610319-b (4+ pr) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610321-o (pr hypt) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610323-o (pr conv) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610325-o (pr bleed) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610329-o (pr bl ppt) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610330-o (plnta del) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610333-o (term att) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610335-o (d in abort) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610337-a (del hfac) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610337-c (del else) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610355-a (mult fir)  not flagged in category W610354-o (mult bir) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610411-o (alco) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610412-o (tobac) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610413-o (smoke) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610421-o (tr blood) value inconsistent with W610022-g (neonate) - cleared in working information
+uuid:396145d7-fa38-4590-b7cc-0f78e39c2fa0   W610310-o (not preg) value inconsistent with W610022-b (50 to 64) - cleared in working information
+uuid:50e8865c-af93-43fa-ac64-d68917bd7225   W610313-o (d aft del)  not flagged in category W610306-o (d <6w pend) - updated in working information
+uuid:50e8865c-af93-43fa-ac64-d68917bd7225   W610316-o (live baby)  not flagged in category W610315-o (d <6w chb) - updated in working information
+uuid:50e8865c-af93-43fa-ac64-d68917bd7225   W610328-o (pr bl lab)  not flagged in category W610325-o (pr bleed) - updated in working information
+uuid:5c17d6b1-b374-43c6-ad88-b94bb2a7eb8d   W610237-o (sk ra herp)  not flagged in category W610233-o (sk rash) - updated in working information
+uuid:08c14983-a487-4a82-a8c2-393c54ff00b1   W610237-o (sk ra herp)  not flagged in category W610233-o (sk rash) - updated in working information
+uuid:278543fc-f5e7-4e18-8e22-e007450a2840   W610271-o (suckle) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:278543fc-f5e7-4e18-8e22-e007450a2840   W610272-o (suck ev) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:278543fc-f5e7-4e18-8e22-e007450a2840   W610360-a (born fac) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:278543fc-f5e7-4e18-8e22-e007450a2840   W610360-b (born home) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:278543fc-f5e7-4e18-8e22-e007450a2840   W610367-a (gest 9m) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:278543fc-f5e7-4e18-8e22-e007450a2840   W610367-b (gest 8m) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:ef2b913e-7523-4559-a388-aa3f8f5a679f   W610361-o (born prof) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:ef2b913e-7523-4559-a388-aa3f8f5a679f   W610365-o (bwt big) value inconsistent with W610022-e (1 to 4) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610152-o (fev nsw) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610191-o (vom bld) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610194-o (abd pain) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610195-o (abd p sev) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610197-a (abd p <2w) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610197-b (abd p 2+w) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610199-b (abd p lo) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610207-o (headache) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:2369a3bd-7a60-4ebb-822a-7aac3042b21b   W610270-o (drink ++) value inconsistent with W610022-f (1 to 11m) - cleared in working information
+uuid:4df55ba9-5951-4113-bc5b-65212bf43bdf   W610166-o (br fast)  not flagged in category W610159-o (dif br) - updated in working information
+uuid:7b42f721-ef00-4e2c-8ed2-da752b04abb6   W610166-o (br fast)  not flagged in category W610159-o (dif br) - updated in working information
+uuid:7b42f721-ef00-4e2c-8ed2-da752b04abb6   W610216-a (unc 6+h)  not flagged in category W610215-o (unc 24+h) - updated in working information
+uuid:7b42f721-ef00-4e2c-8ed2-da752b04abb6   W610361-o (born prof) value inconsistent with W610022-d (5 to 14) - cleared in working information
+uuid:7b42f721-ef00-4e2c-8ed2-da752b04abb6   W610365-o (bwt big) value inconsistent with W610022-d (5 to 14) - cleared in working information
+
+ Second pass 
+
+uuid:00000000-0000-0000-0000-00000000032a   W610194-o (abd pain)  not flagged in category W610193-o (abdom) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032a   W610215-o (unc 24+h)  not flagged in category W610214-o (uncons) - updated in working information
+uuid:00000000-0000-0000-0000-00000000032b   W610200-o (abd prot)  not flagged in category W610193-o (abdom) - updated in working information
+uuid:00000000-0000-0000-0000-0000000002c4   W610273-o (suck st)  not flagged in category W610272-o (suck ev) - updated in working information
+uuid:50e8865c-af93-43fa-ac64-d68917bd7225   W610306-o (d <6w pend) value inconsistent with W610305-o (pregnant) - cleared in working information
+uuid:50e8865c-af93-43fa-ac64-d68917bd7225   W610313-o (d aft del)  not flagged in category W610306-o (d <6w pend) - updated in working information

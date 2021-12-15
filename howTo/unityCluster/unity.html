@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<title>IPR Ohio State: Jason Thomas Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../css/css">
+<link rel="stylesheet" href="../../css/w3.css">
+<link rel="stylesheet" href="../../css/w3-theme-black.css">
+<link rel="stylesheet" href="../../css/family=Roboto">
+<link rel="stylesheet" href="../../css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+    
+  code {font-size: 120%;}
+  
+  pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+    }
+    
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="../../index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+    <a href="../howTo.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">How To...</a>
+    <a href="../../workshopMaterials/wsmaterials.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Workshop Materials</a>
+    <a href="../../Research/research.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Research</a>
+    <a href="../../Software/software.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Software</a>
+    <a href="../../usefulLinks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Useful LInks</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Contents</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Introduction</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#setupWin">Setup for Windows</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#setupMac">Setup for Mac</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#interactive">Interactive Session</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#batchStata">Submit a Stata Batch Jobs</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#batchR">Submit an R Batch Jobs</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#unityAccount">Unity Account</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#usefulLinks">Useful Links</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<div class="w3-main" style="margin-left:250px">
+
+<h2><br><strong>Introduction</strong></h2>
+For Buckeye's with a computationally intensive project, ASC Tech's high-performance computing environment,
+the <a href="http://u.osu.edu/unitycompute/" target="_blank" rel="noopener">Unity cluster</a>, may be the tool for you. This page
+is intended to help users get up and running with Stata and the
+<a href="https://cran.r-project.org/" target="_blank" rel="noopener">R environment</a> on the Unity cluster.  The page is
+currently under construction (i.e., more info to come)...
+
+<a name="setupWin">
+  <h2 style="padding-top: 80px; margin-top: -40px;"><strong>Setup for Windows</strong></h2>
+</a>
+
+<ol start="0">
+<li>If you are connecting to the Unity cluster from an off-campus location, then you need to connect via the ASC Virtual Private Network (VPN). The instructions and (Cisco) software you need to install to establish the VPN can be found <a href="https://osuasc.teamdynamix.com/TDClient/KB/ArticleDet?ID=14542" target="_blank" rel="noopener">here</a>.</li>
+
+<li> Email <span style="color: #0000ff;">asctech@osu.edu</span> and ask them to enable your account.</li>
+
+<li> Download and install a <b>S</b>ecure<b>SH</b>ell (SSH) client along with an X Windows Server.  The default installation options will work fine (e.g., install the programs in "C:\Program Files").
+  <ul>
+  <li> <a href = "https://ocio.osu.edu/software/directory/slwin#putty"><b>PuTTY</b></a> is a free and friendly SSH client</li>
+
+  <li> <a href="https://sourceforge.net/projects/xming/" target="_blank" rel="noopener"><b>Xming</b></a> is a free and popular X server for windows</li>
+
+  <li> <a href = "https://ocio.osu.edu/software/directory/slwin#xwin32"> X-Win32 </a> is an alternative X server that it is freely available to OSU faculty, students, and staff (although not <a href = "https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank" rel="noopener">FOSS</a>).</li>
+  </ul>
+</li>
+
+<li> Open <b>Xming</b> from the start menu </li>
+  <ul>
+  <li> No configuration is necessary.  Note that you should see a little X icon in the taskbar.<br>
+
+  <p style="text-align: center;">
+  <img src="xming.png" alt="" width="173" height="261">
+  </p>
+  </li>
+  </ul>
+
+<li> Start up <b>PuTTY</b> and add the following information for the category <em>Session</em>:
+  <ul>
+  <li> <b>Hostname</b>: unity.asc.ohio-state.edu </li>
+  <li> <b>Saved Session</b>: Unity (or whatever name you prefer) 
+(See red circles below). Be sure to click on <em>Save</em> so that you do not have to re-enter in the configuration information each time.
+<p style="text-align: center;">
+  <img src="puttySession.png" alt="" width="452" height="442">
+</p>
+Then, under <em>Connections</em> :arrow: <em>SSH</em> :arrow: <em>X11</em>, select Enable X11 forwarding
+<p style="text-align: center;">
+  <img src="puttySessionX11.png" alt="" width="452" height="442">
+</p>
+Finally, click on category <em>Session</em> in the sidebar, save the Unity session again, and press open. This will spawn a new window (see screenshot below) prompting you for your username and password (these are the same as your OSU email account, e.g. thomas.3912 and the corresponding password).<br>
+<p style="text-align: center;">
+<img src="puttyCredentials.png" alt="" width="661" height="418">
+</p>
+<br><br>
+<p style="text-align: center;">
+<img src="puttyConnected.png" alt="" width="661" height="418">
+</p>
+  <br><br>
+If your terminal window looks like the above screenshot, then congratulations are in order:) as you have successfully connected to the Unity cluster!</li>
+  </ul>
+</li>
+
+<li> Download and install <a href="https://filezilla-project.org/" rel="noopener" target="_blank"><b>FileZilla</b></a>, which will allow you to transfer files to and from the Unity cluster.  As with PuTTY, we need to configure FileZilla by telling it where to find the Unity cluster and which credentials to log in with.  We also need to specify the <em>Port</em> number as well -- think of a computer as a big building with lots of entrances/doors, and the port number just tells FileZilla which door to use.  Open FileZilla and fill in the following configuration information:
+  <ul>
+  <li> <b>Host:</b> unity.asc.ohio-state.edu </li>
+  <li> <b>Username:</b> your OSU login (lastname.#)</li>
+  <li> <b>Password:</b> your OSU email password </li>
+  <li> <b>Port:</b> 22 </li>
+  </ul>
+and click on the "Quickconnect" button to log into the Unity cluster.  Your FileZilla session should look like the following screenshot.
+<!-- <a href="https://u.osu.edu/thomas.3912/files/2018/04/fileZilla-2mti7rp.png"><img src="https://u.osu.edu/thomas.3912/files/2018/04/fileZilla-2mti7rp.png" alt="" width="1188" height="743" class="alignnone size-full wp-image-311" /></a> -->
+
+<p style="text-align: center;">
+<img src="fileZilla.png" alt="" width="891">
+</li></ol>
+</p>
+
+<a name="setupMac">
+  <h2 style="padding-top: 80px; margin-top: -40px;"><strong>Set Up for Mac</strong></h2>
+</a>
+
+Coming soon..
+
+<a name="interactive">
+  <h2 style="padding-top: 80px; margin-top: -40px;"><strong>Interactive Sessions with Stata and R</strong></h2>
+</a>
+
+<ol>
+<li>Start <b>R</b> by simply typing R at the prompt</li>
+
+<li>Install the <b>Rcmdr</b> library:
+<pre>
+  <code>
+  &gt; install.packages("Rcmdr", dependencies=TRUE)
+  </code>
+</pre>
+accept all of the default options and choose a CRAN site near your location</li>
+
+<li>Load the R Commander library which should start an R session.
+<pre>
+  <code>
+  &gt; library(Rcmdr)
+  </code>
+  </pre>
+</li>
+
+<li>qsub system: useful commands: qstat (qstat -u thomas.3912); showq; qdel jobID will delete a job; less useful: showstart jobID (get jobID from the qstat command; for more see <a href="https://www.osc.edu/supercomputing/batch-processing-at-osc/monitoring-and-managing-your-job" target="_blank" rel="noopener">OSC's page</a></li>
+
+<li>Notes: the email sent to users includes info on the node that is executing the job (not sure of the qsub command that tells this); to change to a node: try ssh u005</li>
+</ol>
+
+<a name="batchStata">
+  <h2 style="padding-top: 80px; margin-top: -40px;"><strong>Submit a Stata Batch Job</strong></h2>
+</a>
+<ul>
+ 	<li>Stata is currently unavailable on the cluster, but the wheels are in motion to renew the license.</li>
+<ul>
+  <li> When Stata is running again, we can use the following command to load the module (note that the actual command appears after the $ prompt)
+    <pre>
+      <code>
+      [thomas.3912@unity-1 ~]$ module load stata
+      </code>
+    </pre></li>
+  <li> To install new programs (e.g., ssc install ice), we need to edit the shell configuration file.  To find out which shell you are using, run the following command
+    <pre>
+      <code>
+      [thomas.3912@unity-1 ~]$ ECHO $SHELL
+      /bin/bash
+      </code>
+    </pre>
+    which tells us that we are using the Bash shell (probably the default).  We need to tell the shell where to install the files Stata needs, so let's create a new directory called "ado" with the command <code>mkdir ~/ado</code> and have Stata store the files there.  For the Bash shell, edit the file <code>~/.bashrc</code> (in your home directory) and add the following lines:
+    <pre>
+      <code>
+      STATATMP="/home/YOUR_USER_NAME_HERE/ado</i>"
+      export STATATMP
+      </code>
+    </pre>
+    Next, run the following command from the terminal: 
+    <pre>
+      <code>
+      [thomas.3912@unity-1 ~]$ source .bashrc
+      </code>
+    </pre>
+  </li>
+ 	<li> If you typed the command <code> ECHO $SHELL </code> and Unity returned <code>/bin/csh</code> or <code>/bin/tcsh</code> (versions of the C Shell) or, then edit the following file <code>~/.cshrc</code> (for csh) or <code>~/.tcshrc</code> (for tcsh) and add the following line
+    <pre>
+      <code>
+      setenv STATATMP "/<i>path</i>/<i>to</i>/<i>directory</i>"
+      </code>
+    </pre>
+    make sure to replace <code>/<i>path</i>/<i>to</i>/<i>directory</i></code> with the path to the folder where you want Stata to store all the installation files (you need to create this folder if it does not exist).
+
+</li>
+</ul>
+</li>
+</ul>
+
+Here is a script taken from <a href="http://u.osu.edu/unitycompute/introduction-to-unity/" target="_blank" rel="noopener">ASC's Intro Page</a>:
+<pre>
+  <code>
+  #!/usr/bin/bash 
+  #
+  # PBS file to run Stata batch job
+  # Invoke like (-v variable)
+  # qsub -d "$PWD" -v DOFILE=stataJob.do runStata.pbs
+  #
+
+  #PBS -l walltime=120:00:00
+  #PBS -l nodes=34:ppn=16,mem=8GB
+  #PBS -j oe
+  #PBS -m abe
+  #PBS -M thomas.3912@osu.edu
+
+  # Above commands:
+  ## -N -- name of job
+  ## -j -- write errors to a log file
+  ## -m -- send email when/if job (b) begins, (e) ends, or (a) aborts
+  ## -M -- email address where message is sent
+
+  module load stata
+  stata -b do ${DOFILE}
+  </code>
+</pre>
+
+<a name="batchR">
+  <h2 style="padding-top: 80px; margin-top: -40px;"><strong>Submit an R Batch Job</strong></h2>
+</a>
+
+Here is a PBS script for running an R batch job.
+<pre>
+  <code>
+  #!/bin/bash
+  #PBS -l walltime=00:10:00
+  #PBS -l nodes=1:ppn=3,mem=3GB
+  #PBS -N example_R_job
+  #PBS -j oe
+  #PBS -m bea
+  #PBS -M thomas.3912@osu.edu
+
+  # Above commands:
+  ## -N -- name of job
+  ## -j -- write errors to a log file
+  ## -m -- send email when/if job (b) begins, (e) ends, or (a) aborts
+  ## -M -- email address where message is sent
+
+  #COMMANDS TO RUN
+  module load intel/16.0.3
+  module load R/3.5.0
+  R CMD BATCH example_R_script.R
+  </code>
+</pre>
+
+
+<a name="unityAccount">
+  <h2 style="padding-top: 80px; margin-top: -40px;"><strong>Information about your Unity Account</strong></h2>
+</a>
+Coming soon..
+
+<a name="usefulLinks">
+  <h2 style="padding-top: 80px; margin-top: -40px;"><strong>Useful links</strong></h2>
+</a>
+<ul>
+<li>Unity Cluster <a href="http://u.osu.edu/unitycompute/unity-compute-nodes/" target="_blank" rel="noopener">Nodes</a></li>
+
+<li>Help with the Portable Batch System <a href = "https://en.wikipedia.org/wiki/Portable_Batch_System" target="_blank" rel="noopener">(PBS)</a>
+
+  <ul>
+  <li><a href="https://learn.scientificprogramming.io/learn-to-use-pbs-pro-job-scheduler-ffd9c0ad680d" target="_blank" rel="noopener">Learn Scientific Programming's tutorial</a></li>
+
+  <li><a href="http://www.arc.ox.ac.uk/content/pbs-job-scheduler" target="_blank" rel="noopener">Advanced Research Computing's Introduction</a></li>
+
+  <li><a href="https://www.nas.nasa.gov/hecc/support/kb/portable-batch-system-(pbs)-overview_126.html" target="_blank" rel="noopener"> NASA's overview page </a> </li>
+  </ul>
+</li>
+</ul>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- END MAIN -->
+</div>
+
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+</body>
+</html>

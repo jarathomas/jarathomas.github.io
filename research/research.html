@@ -6,7 +6,8 @@
 <link rel="stylesheet" href="../css/w3.css">
 <link rel="stylesheet" href="../css/w3-theme-black.css">
 <link rel="stylesheet" href="../css/family=Roboto">
-<link rel="stylesheet" href="../css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
@@ -15,6 +16,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   top: 43px;
   bottom: 0;
   height: inherit;
+  background-color: grey;
+}
+body {
+    background-color: #33006F;
+    color: white;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
 }
 </style>
 <body>
@@ -29,8 +40,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     <a href="../research/research.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Research</a>
     <a href="../software/software.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Software</a>
     <!-- <a href="../usefulLinks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Useful LInks</a> -->
+    <button class="w3-btn" onclick="toggle_dark()"><i class="fa fa-adjust"></i></button>
   </div>
 </div>
+
+<script>
+  function toggle_dark() {
+      var element = document.body;
+      element.classList.toggle("light-mode");
+  }
+</script>
 
 <div class="w3-main" style="margin-left:250px">
 

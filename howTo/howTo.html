@@ -16,8 +16,25 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   bottom: 0;
   height: inherit;
 }
+
+body {
+    background-color: #33006F;
+    color: white;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
 </style>
 <body>
+
+<script>
+  function toggle_dark() {
+      var element = document.body;
+      element.classList.toggle("light-mode");
+  }
+</script>
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -26,9 +43,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     <a href="../index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
     <a href="../howTo/howTo.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">How To...</a>
     <a href="../workshopMaterials/wsmaterials.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Workshop Materials</a>
-    <a href="../Research/research.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Research</a>
-    <a href="../Software/software.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Software</a>
+    <a href="../research/research.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Research</a>
+    <a href="../software/software.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Software</a>
     <a href="../usefulLinks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Useful LInks</a>
+    <button class="w3-btn" onclick="toggle_dark()"><i class="fa fa-adjust"></i></button>
   </div>
 </div>
 

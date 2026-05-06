@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Maximum Likelihood    with </title>
+    <meta charset="utf-8" />
+    <meta name="author" content="   Jason Thomas    R Working Group" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="style_mle.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Maximum Likelihood <br><br> with <img src="img/Rlogo.png" width="120" />
+]
+.author[
+### <br><br><br>Jason Thomas <br> <br>R Working Group
+]
+.date[
+### <br>November 22th, 2024
+]
+
+---
+
+
+
+
+
+
+
+# Introduction
+
+This workshop introduces **maximum likelihood estimation** and illustrates
+many of the concepts and key ideas using &lt;img src="img/Rlogo.png" width="64"&gt;
+
+* What is MLE?
+
+
+* Bit of calculus...with pictures 😎  (sorry, this will be next time)
+  + How do we find a *maximum*?
+  + Um, wait, the maximum of what exactly?
+
+
+* Brute force
+  + No time for calculus, I gotta graduate!
+  + I do have access to a computer, so how do I find a max with a fast CPU?
+
+
+---
+# Regression: model (sorta)
+
+Let's start with a familiar story...
+  
+* Dependent variable (y) is associated with independent variables (x's).  For
+one observation in our data set, we have
+
+$$
+y_i \,=\, \beta_1 X_1 \,+\, \beta_2 X_2 \,+\, \cdots \,+\,
+          \beta_p X_p \,+\, \varepsilon_i
+$$
+
+
+* We observe `\(y\)` and the `\(x\)`'s
+  (❤️❤️❤️
+  our beloved data
+  ❤️❤️❤️)
+  + the `\(i\)` subscript just means a generic observation in our data,&lt;br&gt;
+  so `\(i\)` can go from 1 to N (# number of observations)
+
+
+* The **parameters** in our model are the `\(\beta\)`'s
+  + wait, is `\(\varepsilon_i\)` a parameter?
+
+
+---
+# Regression: goals
+
+This model can teach us a thing or two.
+
+* But first we gotta put in a little work to find values for the `\(\beta\)`'s that
+make good predictions for our data
+  + nice! our model is wrong, but at least it will try to look like the real
+  world (😘 data)
+
+
+* Are the `\(\beta\)`'s different from 0? 🤩 Is this a
+"good" model, or at least not as bad as my other model?
+
+
+* To make some progress we need to make an assumption about how our
+data are distributed.
+  + actually, it might be better to think about our are *errors* are distributed  
+  
+---
+# Regression: choosing the `\(\beta\)`'s
+
+* The universe is pretty fond of the normal distribution, so let's start
+there.
+  + the universe also makes it hard to draw pictures in more than 2 dimensions,
+so let's focus on a simple model for now
+
+$$
+y_i \,=\, \alpha + \beta X \,+\, \varepsilon_i
+$$
+
+* We assume that `\(\varepsilon_i \sim \mbox{Normal}(\mu = 0, \sigma = 1.8)\)` 
+
+  + the `\(\sim\)` just means that the errors have a normal distribution
+  + `\(\mu\)` is the mean of the normal distribution, and `\(\sigma\)` is the standard
+  deviation
+
+
+---
+class: slide-font-25
+# Regression: &lt;img src="img/Rlogo.png" width="64"&gt; and the normal
+
+&lt;img src="img/Rlogo.png" width="64"&gt; makes it easy to work with the normal distribution
+
+
+``` r
+x &lt;- seq(-8, 8, by = .01)
+plot(x, dnorm(x, mean = 0, sd = 1.8))  # dnorm --&gt; "density" or pdf 
+```
+
+&lt;img src="mle_files/figure-html/unnamed-chunk-1-1.png" width="45%" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Quick detour: functions
+
+&lt;img src="img/Rlogo.png" width="64"&gt; includes a lot of useful functions, but
+we can create our own!
+
+
+``` r
+*my_function &lt;- function(x, y) {
+  z &lt;- x + (2*y)
+  return(z)
+}
+my_function(3, 4)
+```
+
+```
+## [1] 11
+```
+
+``` r
+3 + 2*4
+```
+
+```
+## [1] 11
+```
+
+
+---
+# Regression: behind the curtain
+
+Formula for the normal distribution:
+
+
+`$$f(y | X, \mu, \sigma^2) \;\;=\;\; \frac{1}{\sqrt{2\pi\sigma^2}}
+\exp \left\{ \frac{-(y - \mu)^2}{2\sigma^2} \right\}$$`
+
+
+
+``` r
+norm_pdf &lt;- function(x, mu, sigma2) {
+* y &lt;- (1/sqrt(2*pi*sigma2)) * exp( -((x - mu)^2) / (2*sigma2) )
+  return(y)
+}
+norm_pdf(x = 0.4, mu = 0, sigma2 = 1.8^2)
+```
+
+```
+## [1] 0.2162291
+```
+
+``` r
+dnorm( x = 0.4, mean = 0, sd = 1.8 )
+```
+
+```
+## [1] 0.2162291
+```
+
+
+---
+# Regression: model
+
+* So what is our model really trying to say?
+
+* To find out, we can use `rnorm()`, which generates random draws from
+a normal distribution (just like our model assumes)
+
+
+``` r
+sample_size &lt;- 85; mu &lt;- 0; sig &lt;- 1.8
+alpha &lt;- 3; beta &lt;- 0.7
+*x &lt;- rnorm(n = sample_size,    # sample randomly from normal dist.
+           mean = -0.3, sd = 12)
+y &lt;- alpha + beta*x
+```
+
+Right?
+
+
+---
+# Regression: model
+
+Nope!  We forgot the assumption about our **errors** following a &lt;br&gt;
+*normal distribution*
+
+
+``` r
+sample_size &lt;- 85; mu &lt;- 0; sig &lt;- 1.8
+alpha &lt;- 3; beta &lt;- 0.7
+x &lt;- rnorm(n = sample_size,    # sample randomly from normal dist.
+           mean = -0.3, sd = 12)
+*y &lt;- alpha + beta*x + rnorm(n = sample_size, mu, sig)
+```
+
+
+---
+# Regression: model
+
+
+``` r
+plot(x, y) # data
+```
+
+&lt;img src="mle_files/figure-html/unnamed-chunk-6-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Regression: sanity check
+
+Let's check our errors and see if they have the right distribution
+
+
+``` r
+mod1 &lt;- lm(y ~ x)
+mu; mean(mod1$resid)
+```
+
+```
+## [1] 0
+```
+
+```
+## [1] -5.26208e-17
+```
+
+``` r
+sig; sd(mod1$resid)
+```
+
+```
+## [1] 1.8
+```
+
+```
+## [1] 1.745053
+```
+
+
+---
+# Regression: sanity check 2
+
+
+``` r
+hist(mod1$resid, probability = TRUE, xlim=c(-6,6), ylim=c(0, .3))
+x_range &lt;- seq(-6, 6, by = 0.01)
+*lines(x_range, dnorm(x_range, mu, sig), col = "red", lwd = 2)
+```
+
+&lt;img src="mle_files/figure-html/unnamed-chunk-8-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Density &amp;#8680; Likelihood
+
+Yeah, yeah, but I'm here to learn about **MLE**!
+
+* OK, so remember the density function for the normal distribution? This
+was in our `norm_pdf()` function and looks like  
+
+
+`$$f(y | X, \mu, \sigma^2) \;\;=\;\; \frac{1}{\sqrt{2\pi\sigma^2}}
+\exp\left\{\frac{-(y - \mu)^2}{2\sigma^2}\right\}$$`
+
+* This is our *density* function
+  + with regression, `\(\mu = \alpha + \beta * X\)`
+
+
+* Quick note: density is NOT the same as probability
+  + they are related (just ask if you want the details)
+
+
+---
+# Density &amp;#8680; Likelihood
+
+* With **maximum likelihood**, we flip what is known and what is given.
+  + how likely is a value of the parameter, *given* the observed data
+  + instead of `\(f(y | \beta, X)\)`, we use `\(f(\beta | y, X)\)`
+
+  
+* After the swap, we search for values of `\(\alpha\)`, `\(\beta\)`, and `\(\sigma\)` that
+  give us the largest **likelihood**, `\(\mathcal{L}\)`
+
+`\begin{eqnarray}
+\mathcal{L}(\alpha, \beta, \sigma \,|\, y, X) &amp;=&amp; 
+\frac{1}{\sqrt{2\pi\sigma^2}}
+\exp \left\{ \frac{-(y - (\alpha + \beta*X))^2}{2\sigma^2} \right\}
+\end{eqnarray}`
+
+(recall that `\(\mu = \alpha + \beta * X)\)`
+
+
+---
+# Likelihood function
+
+
+``` r
+like1 &lt;- function(alpha, beta, sigma2, x, y) {
+  mu &lt;- alpha + beta * x
+  dens &lt;- (1/sqrt(2*pi*sigma2)) * exp( -((x - mu)^2) / (2*sigma2) )
+  return(dens)
+}
+like1(alpha = 1, beta = 1, sigma = 1, x = 10, y = 8)
+```
+
+```
+## [1] 0.2419707
+```
+
+``` r
+like1(alpha = .5, beta = .5, sigma = .5, x = 10, y = 8)
+```
+
+```
+## [1] 9.056529e-10
+```
+
+Aha!  Our first guess is better than our second guess.  &lt;br&gt;&lt;br&gt;
+
+But what complications do we still have to conquer?
+
+
+---
+# Obstacles
+
+* *First*, we've got more than 1 observation, so we need to set up our
+likelihood function to include all 58 pairs of (x, y).
+
+  + (as we'll see this leads to another math and computer issue)
+
+* *Second*, it might take a LONG time to just randomly choose values for
+the parameters and see if it increases the likelihood.
+
+  + we need an efficient way to find the maximum of this function
+  
+  + the set of parameters that accomplish this are the &lt;br&gt;
+  **maximum likelihood estimates**
+
+
+---
+# Multiple observations
+
+* To get over the first hurdle, we need to throw another assumption on the
+existing pile.
+
+
+* If we assume our observations are *independent* and *identically* distributed
+(i.e., they all have the same distribution), then we are back in the game!
+  + sometimes you will see this as the *iid* assumption
+
+
+* When two observations are independent, then the probability of
+both occurring is just the probabilities multiplied together
+  + Pr(Heads on 2 coin flips) = &lt;br&gt;
+  Pr(first flip = Heads) * Pr(2nd flip = Heads)
+
+
+---
+class: slide-font-28
+# Multiple observations (cont.)
+
+With the *iid* assumption, our likelihood function is now...
+
+`\begin{eqnarray}
+\mathcal{L}(\alpha, \beta, \sigma \,|\, \boldsymbol{y}, \boldsymbol{X}) &amp;=&amp;
+\mbox{Normal}(y_1, x_1, \alpha, \beta, \sigma) * \\
+&amp;&amp; \mbox{Normal}(y_2, x_2, \alpha, \beta, \sigma) *  \\
+&amp;&amp; \;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \vdots  \\
+&amp;&amp; \mbox{Normal}(y_{58}, x_{58}, \alpha, \beta, \sigma) \\ \\ 
+\mbox{which we can abreviate as} \\ \\
+\mathcal{L}(\alpha, \beta, \sigma \,|\, \boldsymbol{y}, \boldsymbol{X}) &amp;=&amp; \prod\limits_{i=1}^N \mbox{Normal}\,(\, \alpha, \beta, \,\sigma \;|\; X_i \,,\, y_i \,)
+\end{eqnarray}`
+
+*notation*: I'm using bold to indicate a vector:
+`\(\boldsymbol{y} = (y_1, y_2, \ldots, y_{58})\)`
+
+
+---
+# Log likelihood
+
+* If you try this out with more than a few observations, you will quickly discover
+that likelihood gets really small really fast!
+  + our computer will not be able to keep track of such small numbers
+
+
+* We deal with this issue by working with the `\(\log()\)` of the likelihood
+  + this has the added benefit of making the math easier
+  + `\(\log(A * B) \;=\; \log(A) + \log(B)\)`
+  
+  
+* So the log likelihood of N observations is simply
+
+`\begin{eqnarray}
+\log\{\mathcal{L}(\alpha, \beta, \sigma \,|\, \boldsymbol{y}, \boldsymbol{X}) \} &amp;=&amp;
+\sum\limits_{i=1}^N \log\{\mbox{Normal}\,(\, \alpha, \beta, \,\sigma \;|\; X_i \,,\, y_i \,)\}
+\end{eqnarray}`
+
+
+---
+# Exercises
+
+1. Write down the log likelihood function
+
+1. Create an R function that returns the log likelihood for multiple
+observations
+
+1. Using your function, set `\(\alpha\)` and `\(\sigma\)` to fixed values and
+plot values of the log likelihood for different values of `\(\beta\)`
+
+
+
+
+---
+# Maximization
+
+Now let's get over our second hurdle...
+
+* Maximize the log likelihood function
+
+  + `\(\ell(\alpha, \beta, \sigma \,|\, \boldsymbol{y}, \boldsymbol{X}) \;\;=\;\; \log\{\mathcal{L}(\alpha, \beta, \sigma \,|\, \boldsymbol{y}, \boldsymbol{X})\)`
+
+* The `optim()` function is the trick here. The arguments are
+
+  + `par` -- a vector of initial values of the parameters that you want to find
+  the "best" values
+  
+  + `fn` -- the function whose maximum you want to find
+  
+  + this tool actually *minimizes* the function, so your function should
+  return the negative log likelihood
+  
+  
+---
+# Maximization (cont.)
+
+
+``` r
+max_like_est &lt;- optim(par = c(1, 1, 1), nlog_lik, x=x, y=y)
+max_like_est$par  # MLE
+```
+
+```
+## [1] 3.2139735 0.7168371 1.7344635
+```
+
+``` r
+max_like_est$value # negative log likelihood at MLE
+```
+
+```
+## [1] 167.4335
+```
+
+``` r
+logLik(mod1)
+```
+
+```
+## 'log Lik.' -167.4335 (df=3)
+```
+
+
+---
+# Standard errors
+
+``` r
+mle2 &lt;- optim(par = c(1, 1, 1), nlog_lik, x=x, y=y,
+*             hessian = TRUE)
+mle2$par
+```
+
+```
+## [1] 3.2139735 0.7168371 1.7344635
+```
+
+``` r
+sqrt(diag(solve(mle2$hessian)))
+```
+
+```
+## [1] 0.20078444 0.01909337 0.13299322
+```
+
+``` r
+coef(summary(mod1))
+```
+
+```
+##              Estimate Std. Error  t value     Pr(&gt;|t|)
+## (Intercept) 3.2138430 0.20322361 15.81432 9.055952e-27
+## x           0.7168491 0.01932532 37.09377 1.939099e-53
+```
+
+---
+# Exercises
+
+
+
+* `optim` does 100 iterations by default.  Can you find the log likelihood
+value and parameter estimates after only 25 iterations?
+
+* Does the algorithm used to find the minimum make a difference?
+
+* Can you enforce a constraint so that `\(\beta\)` must stay below a value of 1?
+
+
+---
+# Binomial Model for coin flips
+
+* Another example: coin flips
+  + tails, heads, heads, heads (n = 4)
+  + `\(p =\)` Probability(coin flip = heads)
+    
+  + table for `\(\hat{p}\)` &amp; likelihood function
+  + log likelihood &amp; explicit solution
+  
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

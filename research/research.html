@@ -30,17 +30,33 @@ body {
 </style>
 <body>
 
+<script>
+function toggleMenu() {
+    var x = document.getElementById("navMobile");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  <div id="navDemo" class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="toggleMenu()"><i class="fa fa-bars"></i></a>
     <a href="../index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
-    <!-- <a href="../howTo/howTo.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">How To...</a> -->
     <a href="../workshopMaterials/wsmaterials.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Workshop Materials</a>
     <a href="../research/research.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Research</a>
     <a href="../software/software.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Software</a>
-    <!-- <a href="../usefulLinks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Useful LInks</a> -->
     <button class="w3-btn" onclick="toggle_dark()"><i class="fa fa-adjust"></i></button>
+  </div>
+  <div id="navMobile" class="w3-bar-block w3-theme w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="workshopMaterials/wsmaterials.html" class="w3-bar-item w3-button">Workshop Materials</a>
+    <a href="research/research.html" class="w3-bar-item w3-button">Research</a>
+    <a href="software/software.html" class="w3-bar-item w3-button">Software</a>
   </div>
 </div>
 
@@ -61,12 +77,16 @@ body {
   <!-- Verbal Autopsy -->
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-        <h1 class="w3-text-teal" style="padding-top: 80px; margin-top: -40px;"><strong>Verabl Autopsy</strong></h1>
+        <h1 class="w3-text-teal" style="padding-top: 40px; margin-top: -20px;"><strong>Verbal Autopsy</strong></h1>
       </a>
       <ul>
-        <li><a href="https://openva.net/publication/groenewald2023_gha/"> Greonwald et al. (2023)</a>
-        <li><a href="https://openva.net/publication/li2021openva/">  Li et al. (2023)</a>
-        <li><a href="https://openva.net/publication/chandramohangha2021/">  Chandramohan et al. (2021)</a>
+        <li><a href="https://doi.org/10.1080/16549716.2023.2285105"> Greonwald et al. (2023)</a>
+	  &nbsp; Agreement between cause of death assignment by computer-coded verbal autopsy methods
+	  and physician coding of verbal autopsy interviews in South Africa. Glob Health Action (16:1).</li>
+        <li><a href="https://journal.r-project.org/articles/RJ-2023-020/">  Li et al. (2023)</a>
+	  &nbsp; The openVA Toolkit for Verbal Autopsy. The R Journal.</li>
+        <li><a href="https://doi.org/10.1080/16549716.2021.1982486">  Chandramohan et al. (2021)</a>
+	  &nbsp; Estimating causes of death where there is no medical certification.  Global Health Action (14:sup1).</li>
       </ul>
     </div>
   </div>
@@ -74,24 +94,43 @@ body {
   <!-- Demography -->
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-        <h1 class="w3-text-teal" style="padding-top: 80px; margin-top: -40px;"><strong>Demography</strong></h1>
+        <h1 class="w3-text-teal" style="padding-top: 40px; margin-top: -20px;"><strong>Demography</strong></h1>
       </a>
       <ul>
-        <li><a href="https://doi.org/10.4054%2FDemRes.2011.25.2">Thomas & Clark (2011) </a>
-        </li>
+        <li><a href="https://doi.org/10.1016/j.healthplace.2024.103330">Ard, Thomas, & Bullock (2024)</a>
+	  &nbsp; Toxic Air Pollution and Cognitive Decline: Untangling Particulate Matter.  Health and Place (89).</li>
+        <li><a href="https://doi.org/10.1007/s10745-023-00431-y">Moritz et al. (2023)</a>
+	  &nbsp; Coupled Demographic Dynamics of Herds and Households Constrain Livestock Population
+	  Growth in Pastoral Systems. Human Ecology (51)</li>
+        <li><a href="https://doi.org/10.1177/2333721419855665">Farmer, Wray, & Thomas (2019)</a>
+	  &nbsp; Do Race and Everyday Discrimination Predict Mortality Risk? Gerontology and Geriatric Medicine (5).</li>
+        <li><a href="https://doi.org/10.1177/0192513X13518211">Hognas & Thomas (2016)</a>
+	  &nbsp; Birds of a Feather Have Babies Together? Journal of Family Issues (37:1).</li>
+        <li><a href="https://doi.org/10.1177/0192513X13518211">Thomas & Hognas (2015)</a>
+	  &nbsp; The Effects of Parental Divorce on the Health of Adult Children.
+	Longitudinal and Life Course Studies (6:3).</li>
+        <li><a href="https://doi.org/10.1007/s13524-012-0160-6">Palloni & Thomas (2013)</a>
+	  &nbsp; Estimation of Covariate Effects with Current Status Data and Differential Mortality.
+	Demography (50:2).</li>
+        <li><a href="https://doi.org/10.4054/DemRes.2012.27.26">Clark, Thomas, & Bao (2011)</a>
+	  &nbsp; Estimates of Age-Specific Reductions in HIV Prevalence in Uganda.  Demographic Research (27).</li>
+        <li><a href="https://doi.org/10.4054%2FDemRes.2011.25.2">Thomas & Clark (2011)</a>
+	  &nbsp; More on the Cohort-Component Model of Population Projection in the Context of HIV/AIDS.
+	  Demographic Research (25).</li>
       </ul>
     </div>
   </div>
 
   <!-- Climate Change -->
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-        <h1 class="w3-text-teal" style="padding-top: 80px; margin-top: -40px;"><strong>Climate Change</strong></h1>
-        <ul>
-          <li>Ard et al. Cognitive Functioning</li>
-        </ul>
-    </div>
-  </div>
+  <!-- <div class="w3-row w3-padding-64"> -->
+  <!--   <div class="w3-twothird w3-container"> -->
+  <!--       <h1 class="w3-text-teal" style="padding-top: 80px; margin-top: -40px;"><strong>Climate Change</strong></h1> -->
+  <!--       <ul> -->
+  <!--         <li><a href="https://doi.org/10.1016/j.healthplace.2024.103330">Ard, Thomas, & Bullock (2024)</a> -->
+  <!-- 	  &nbsp; Toxic Air Pollution and Cognitive Decline: Untangling Particulate Matter.  Health and Place (89).</li> -->
+  <!--       </ul> -->
+  <!--   </div> -->
+  <!-- </div> -->
 </div>
 </body>
 </html>
